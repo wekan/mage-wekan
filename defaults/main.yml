@@ -1,0 +1,6 @@
+---
+
+wekan_mail_url: 'smtp://user:pass@mailserver.examples.com:25/'
+wekan_mail_from: 'wekan-admin@example.com'
+wekan_root_url: 'http://127.0.0.1'
+wekan_port: 8080

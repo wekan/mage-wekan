@@ -1,0 +1,28 @@
+---
+
+- name: "Install Wekan"
+  shell: "snap install wekan"
+
+- name: "Update Wekan"
+  shell: "snap refresh wekan"
+
+- name: "Configure Wekan"
+  shell: | 
+    snap set wekan mail-url='{{ wekan_mail_url }}'
+    snap set wekan mail-from='{{ wekan_mail_from }}'
+    snap set wekan root-url='{{ wekan_root_url }}'
+    snap set wekan port='{{ wekan_port }}'
+
+- name: "Restart Wekan"
+  service:
+    name: snap.wekan.wekan
+    state: restarted
+
+- cron:
+    name: "Backup Wekan/MongoDB"
+    minute: "0"
+    hour: "2"
+    day: "*"
+    job: "/snap/bin/wekan.database-backup > /dev/null"
+    cron_file: wekan-backup
+    user: root
