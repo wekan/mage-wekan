@@ -18,3 +18,18 @@ Example playbook:
      - role: mage-update
      - role: mage-wekan
 ```
+
+Cheatsheet:
+
+```
+# Logs
+journalctl -u snap.wekan.wekan
+journalctl -u snap.wekan.mongodb
+
+# Services
+service snap.wekan.wekan <action>
+service snap.wekan.mongodb <action>
+
+# For more help see
+wekan.help
+```
