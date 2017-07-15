@@ -32,4 +32,7 @@ service snap.wekan.mongodb <action>
 
 # For more help see
 wekan.help
+
+# Impossible to refresh wekan to a newer version? See the last comment in
+# https://forum.snapcraft.io/t/error-when-updating-snap-and-cleaning-old-revisions/786/14
 ```
